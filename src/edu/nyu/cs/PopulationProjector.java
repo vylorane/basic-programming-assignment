@@ -38,26 +38,7 @@ public class PopulationProjector {
      * @throws Exception Allows us to not worry about Exceptions in this function. Java requires the main functino include this, even if not used.
      */
     public static void main(String[] args) throws Exception {
-        double year0 = 332403650; // current population
-        double birthsPerYear = (1.0 / 7) * 60 * 60 * 24 * 365; // one every 7 seconds
-        double deathsPerYear = (1.0 / 13) * 60 * 60 * 24 * 365; // one every 13 seconds
-        double immigrantsPerYear = (1.0 / 45) * 60 * 60 * 24 * 365; // one every 45 seconds
-        // System.out.println("Births per year: " + birthsPerYear);
-        // System.out.println("Deaths per year: " + deathsPerYear);
-        // System.out.println("Immigrants per year: " + immigrantsPerYear);
-
-        int year1 = (int) (year0 + birthsPerYear + immigrantsPerYear - deathsPerYear);
-        int year2 = (int) (year1 + birthsPerYear + immigrantsPerYear - deathsPerYear);
-        int year3 = (int) (year2 + birthsPerYear + immigrantsPerYear - deathsPerYear);
-        int year4 = (int) (year3 + birthsPerYear + immigrantsPerYear - deathsPerYear);
-        int year5 = (int) (year4 + birthsPerYear + immigrantsPerYear - deathsPerYear);
-
-        System.out.println("Here are the projected population numbers for the next five years:");
-        System.out.println("- Year 2023: " + year1);
-        System.out.println("- Year 2024: " + year2);
-        System.out.println("- Year 2025: " + year3);
-        System.out.println("- Year 2026: " + year4);
-        System.out.println("- Year 2027: " + year5);
+        // complete this function to solve the problem
     }
 
 

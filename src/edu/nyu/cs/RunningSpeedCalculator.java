@@ -30,15 +30,7 @@ public class RunningSpeedCalculator {
    * @throws Exception Allows us to not worry about Exceptions in this function. Java requires the main functino include this, even if not used.
    */
   public static void main(String[] args) throws Exception {
-    Scanner scn = new Scanner(System.in);
-    System.out.println("How many kilometers did you run?");
-    String distanceKilometers = scn.nextLine();
-    double distanceMiles = Double.parseDouble(distanceKilometers) / 1.6;
-    System.out.println("How many minutes did it take you?");
-    String timeMinutes = scn.nextLine();
-    double timeHours = Double.parseDouble(timeMinutes) / 60;
-    double speedMilesPerHour = distanceMiles / timeHours;
-    System.out.println("Your average speed was " + speedMilesPerHour + " miles per hour.");
+        // complete this function to solve the problem
   }
 
 
