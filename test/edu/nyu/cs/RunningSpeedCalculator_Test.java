@@ -13,56 +13,37 @@ import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.*;
 public class RunningSpeedCalculator_Test {
 
     @Rule
-    public final SystemOutRule systemOutRule = new SystemOutRule();
-
-    @Rule
     public final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
 
-    @Test
-    public void testGetDistanceInKmFromUser() {
-        systemInMock.provideLines("10", "20.5"); // sample input
-        double[] expecteds = {10, 20.5}; // expected return values, given the input
-        double delta = 0.1;
-
-        // iterate through each expected value and check the expected return value
-        for (double expected : expecteds) {  
-            double actual = RunningSpeedCalculator.getDistanceInKmFromUser();
-            assertEquals(expected, actual, delta);
-        }
-    }
+    @Rule
+    public final SystemOutRule systemOutRule = new SystemOutRule();
 
     @Test
-    public void testGetTimeInMinutesFromUser() {
-        systemInMock.provideLines("10", "20", "15.75");
-        double[] expecteds = {10, 20, 15.75}; // expected return values, given the input
-        double delta = 0.1;
-
-        // iterate through each expected value and check the expected return value
-        for (double expected : expecteds) {
-            double actual = RunningSpeedCalculator.getTimeInMinutesFromUser();
-            assertEquals(expected, actual, delta);
-        }
-    }
-
-    @Test
-    public void testGetAverageSpeedInMilesPerHour() {
-        // check that the function returns the correct speed in miles per hour, given the distance in km and time in minutes
-        double[][] mockInputs = {
-            {10, 200},
-            {20.5, 375.2},
-            {15.75, 37.6}
+    public void testMain() {
+        systemOutRule.enableLog(); // start capturing System.out
+        String[][] mockInputs = {
+            {"10", "200"},
+            {"20.5", "375.2"},
+            {"15.75", "37.6"}
         };
-        double[] expecteds = {
-            1.875,
-            2.05,
-            15.71
+        String[] expecteds = {
+            "1.875",
+            "2.048",
+            "15.708"
         };
-        double delta = 1;
         int i = 0;
-        for (double[] mockInput : mockInputs) {
-            double actual = RunningSpeedCalculator.getAverageSpeedInMilesPerHour(mockInput[0], mockInput[1]);
-            assertEquals(expecteds[i], actual, delta);
-            i++;
+        for (String[] mockInput : mockInputs) {
+            systemInMock.provideLines(mockInput[0], mockInput[1]);
+            String[] args = {};
+            try {
+                RunningSpeedCalculator.main(args);
+                String output = systemOutRule.getLog();
+                assertEquals(true, output.contains(expecteds[i]));
+                i++;
+            }
+            catch (Exception e) {
+                assertEquals(true, false); // program crashed
+            }
         }
 
 

@@ -1,10 +1,10 @@
 # Java Project Practice Run
 
-Welcome to your first Java programming assignment.
+Welcome!
 
 ## The goal
 
-The goal of this assignment is to become more familiar with the basics of Java programs.
+The goal of this assignment is to start to become familiar with input, output, data types, and operations in Java.
 
 Complete the code according to the instructions written as comments within each of the `.java` source code files in the `src` dirwctory.
 
@@ -13,7 +13,7 @@ Complete the code according to the instructions written as comments within each 
 Each Java project will have several important directories:
 
 - `src` - contains the Java source code for the project (i.e. `.java` files)
-- `test` - contains code that will help us determine whether the code you have written works correctly. Do not touch this directory!
+- `test` - contains code that will help us determine whether the code you have written behaves correctly. Do not touch this directory!
 - `bin` - contains the compiled code (i.e. `.class` files)
 - `lib` - contains any dependencies (other libraries of code that the project depends upon to work)
 
