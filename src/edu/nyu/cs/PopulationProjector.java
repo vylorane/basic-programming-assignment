@@ -20,8 +20,7 @@ import java.util.Scanner;
  *  - In Java, if two integers perform division, the result is an integer - the fractional part is truncated.  
  *  - To get an accurate result, one of the values in the division must be a number with a decimal place.
  * 
- * Sample output.  The numbers are placeholder only and are not correct.  
- * Your program should format the output exactly like this: 
+ * Sample output. Your program should format the output exactly like this: 
  *  Here are the projected population numbers for the next five years:
  *  - Year 2023: 333505890
  *  - Year 2024: 345678825 
