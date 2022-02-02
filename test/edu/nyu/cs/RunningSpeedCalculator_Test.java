@@ -37,7 +37,7 @@ public class RunningSpeedCalculator_Test {
             String[] args = {};
             try {
                 RunningSpeedCalculator.main(args);
-                String output = systemOutRule.getLog();
+                String output = systemOutRule.getLogWithNormalizedLineSeparator();
                 assertEquals(true, output.contains(expecteds[i]));
                 i++;
             }

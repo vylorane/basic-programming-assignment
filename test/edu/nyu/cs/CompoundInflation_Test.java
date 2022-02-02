@@ -46,7 +46,7 @@ public class CompoundInflation_Test {
             String[] args = {};
             try {
                 CompoundInflation.main(args);
-                String output = systemOutRule.getLog();
+                String output = systemOutRule.getLogWithNormalizedLineSeparator();
                 assertEquals(true, output.contains(this.expectedValues[i]));
                 i++;
             }
@@ -66,7 +66,7 @@ public class CompoundInflation_Test {
             systemInMock.provideLines(mockInput);
             try {
                 CompoundInflation.main(args);
-                String output = systemOutRule.getLog();
+                String output = systemOutRule.getLogWithNormalizedLineSeparator();
                 String[] lines = output.split("\n");
                 assertEquals(lines[1], this.expectedOutputs[i]); // second line should match expected
                 i++;

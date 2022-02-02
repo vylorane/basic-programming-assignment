@@ -33,7 +33,7 @@ public class PopulationProjector_Test {
         String[] args = {};
         try {
             PopulationProjector.main(args);
-            String output = systemOutRule.getLog();
+            String output = systemOutRule.getLogWithNormalizedLineSeparator();
             for (String expected : this.expecteds) {
                 boolean contained = output.contains(expected);
                 assertEquals(true, contained);
@@ -52,7 +52,7 @@ public class PopulationProjector_Test {
         String[] args = {};
         try {
             PopulationProjector.main(args);
-            String output = systemOutRule.getLog();
+            String output = systemOutRule.getLogWithNormalizedLineSeparator();
             String[] outputLines = output.split("\n");
             for (String line : outputLines) {
                 assertEquals(line.strip(), this.expecteds[i]);
