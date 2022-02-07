@@ -19,12 +19,12 @@ public class PopulationProjector_Test {
     public final SystemOutRule systemOutRule = new SystemOutRule();
 
     String[] expecteds = {
-        "Here are the projected population numbers for the next five years:",
-        "- Year 2023: 335183746",
-        "- Year 2024: 337963842",
-        "- Year 2025: 340743938",
-        "- Year 2026: 343524034",
-        "- Year 2027: 346304130"
+            "Here are the projected population numbers for the next five years:",
+            "- Year 2023: 335183746",
+            "- Year 2024: 337963842",
+            "- Year 2025: 340743938",
+            "- Year 2026: 343524034",
+            "- Year 2027: 346304130"
     };
 
     @Test
@@ -38,8 +38,7 @@ public class PopulationProjector_Test {
                 boolean contained = output.contains(expected);
                 assertEquals(true, contained);
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             assertEquals(true, false); // program crashed
         }
     }
@@ -55,11 +54,10 @@ public class PopulationProjector_Test {
             String output = systemOutRule.getLogWithNormalizedLineSeparator();
             String[] outputLines = output.split("\n");
             for (String line : outputLines) {
-                assertEquals(line.strip(), this.expecteds[i]);
+                assertEquals(line.trim(), this.expecteds[i]);
                 i++;
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             assertEquals(true, false); // program crashed
         }
     }
