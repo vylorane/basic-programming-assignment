@@ -51,7 +51,7 @@ public class CompoundInflation_Test {
                 i++;
             }
             catch (Exception e) {
-                assertEquals(true, false); // program crashed
+                assertEquals(true, e); // program crashed
             }
         }
     }
@@ -72,7 +72,7 @@ public class CompoundInflation_Test {
                 i++;
             }
             catch (Exception e) {
-                assertEquals(true, false); // program crashed
+                assertEquals(true, e); // program crashed
             }
         }
     }

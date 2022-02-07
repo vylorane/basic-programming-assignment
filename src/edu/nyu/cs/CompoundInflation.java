@@ -24,6 +24,8 @@ import java.util.Scanner;
  public class CompoundInflation {
     
     public static void main(String[] args) {
+        
         // complete this function to solve the problem
+
     }
 }
