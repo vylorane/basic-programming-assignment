@@ -27,9 +27,9 @@ public class RunningSpeedCalculator_Test {
             {"15.75", "37.6"}
         };
         String[] expecteds = {
-            "1.875",
-            "2.048",
-            "15.708"
+            "1.8",
+            "2.0",
+            "15.6"
         };
         int i = 0;
         for (String[] mockInput : mockInputs) {
