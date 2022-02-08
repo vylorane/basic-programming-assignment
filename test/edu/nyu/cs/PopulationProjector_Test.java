@@ -39,7 +39,7 @@ public class PopulationProjector_Test {
                 assertEquals(true, contained);
             }
         } catch (Exception e) {
-            assertEquals(true, false); // program crashed
+            assertEquals(true, e); // program crashed
         }
     }
 
@@ -54,11 +54,11 @@ public class PopulationProjector_Test {
             String output = systemOutRule.getLogWithNormalizedLineSeparator();
             String[] outputLines = output.split("\n");
             for (String line : outputLines) {
-                assertEquals(line.trim(), this.expecteds[i]);
+                assertEquals(this.expecteds[i], line.trim());
                 i++;
             }
         } catch (Exception e) {
-            assertEquals(true, false); // program crashed
+            assertEquals(true, e); // program crashed
         }
     }
 

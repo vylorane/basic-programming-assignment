@@ -68,7 +68,7 @@ public class CompoundInflation_Test {
                 CompoundInflation.main(args);
                 String output = systemOutRule.getLogWithNormalizedLineSeparator();
                 String[] lines = output.split("\n");
-                assertEquals(lines[1], this.expectedOutputs[i]); // second line should match expected
+                assertEquals(this.expectedOutputs[i], lines[1]); // second line should match expected
                 i++;
             }
             catch (Exception e) {
