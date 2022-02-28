@@ -10,10 +10,15 @@ import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
 import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.*;
 // import static org.mockito.Mockito.*;
 
+import org.junit.ClassRule;
+
 public class PopulationProjector_Test {
 
-    @Rule
-    public final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
+    // @Rule
+    // public final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
+
+    @ClassRule
+    public static final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
 
     @Rule
     public final SystemOutRule systemOutRule = new SystemOutRule();
