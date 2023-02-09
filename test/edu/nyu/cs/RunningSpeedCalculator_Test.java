@@ -43,11 +43,13 @@ public class RunningSpeedCalculator_Test {
             try {
                 RunningSpeedCalculator.main(args);
                 String output = systemOutRule.getLogWithNormalizedLineSeparator();
-                assertEquals(true, output.contains(expecteds[i]));
+                boolean expected = true;
+                boolean actual = output.contains(expecteds[i]);
+                assertEquals("Given the input, '" + mockInput[0] + "' and '" + mockInput[1] + "', expected the output to contain '" + expecteds[i] + "'.", expected, actual);
                 i++;
             }
             catch (Exception e) {
-                assertEquals(true, e); // program crashed
+                assertEquals("Expected the program never to crash... unfortunately, it did!", true, e); // program crashed
             }
         }
 

@@ -40,11 +40,11 @@ public class PopulationProjector_Test {
             PopulationProjector.main(args);
             String output = systemOutRule.getLogWithNormalizedLineSeparator();
             for (String expected : this.expecteds) {
-                boolean contained = output.contains(expected);
-                assertEquals(true, contained);
+                boolean actual = output.contains(expected);
+                assertEquals("Expected the output to contain '" + expected + "'.", true, actual);
             }
         } catch (Exception e) {
-            assertEquals(true, e); // program crashed
+            assertEquals("Expected the program never to crash... unfortunately, it did!", true, e); // program crashed
         }
     }
 
@@ -59,11 +59,13 @@ public class PopulationProjector_Test {
             String output = systemOutRule.getLogWithNormalizedLineSeparator();
             String[] outputLines = output.split("\n");
             for (String line : outputLines) {
-                assertEquals(this.expecteds[i], line.trim());
+                String expected = this.expecteds[i];
+                String actual = line.trim();
+                assertEquals("Expected the text, '" + expected + "', to be output at the appropriate place.", expected, actual);
                 i++;
             }
         } catch (Exception e) {
-            assertEquals(true, e); // program crashed
+            assertEquals("Expected the program never to crash... unfortunately, it did!", true, e); // program crashed
         }
     }
 

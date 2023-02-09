@@ -48,15 +48,17 @@ public class CompoundInflation_Test {
         int i = 0;
         for (String mockInput : this.mockInputs) {
             systemInMock.provideLines(mockInput);
+            String expected = this.expectedValues[i];
             String[] args = {};
             try {
                 CompoundInflation.main(args);
                 String output = systemOutRule.getLogWithNormalizedLineSeparator();
-                assertEquals(true, output.contains(this.expectedValues[i]));
+                boolean actual = output.contains(expected);
+                assertEquals("When given '" + mockInput + "' as input, the output should contain '" + expected + "'.", true, actual);
                 i++;
             }
             catch (Exception e) {
-                assertEquals(true, e); // program crashed
+                assertEquals("Expected the program never to crash... unfortunately it did!", true, e); // program crashed
             }
         }
     }
@@ -69,15 +71,17 @@ public class CompoundInflation_Test {
         for (String mockInput : this.mockInputs) {
             systemOutRule.clearLog(); // clear any previous output from the log
             systemInMock.provideLines(mockInput);
+            String expected = expectedOutputs[i];
             try {
                 CompoundInflation.main(args);
                 String output = systemOutRule.getLogWithNormalizedLineSeparator();
                 String[] lines = output.split("\n");
-                assertEquals(this.expectedOutputs[i], lines[1]); // second line should match expected
+                String actual = lines[1];
+                assertEquals("Given the input, '" + mockInput + "', expected the second line output to exactly match, '" + expected + "'.", expected, actual); // second line should match expected
                 i++;
             }
             catch (Exception e) {
-                assertEquals(true, e); // program crashed
+                assertEquals("Expected the program never to crash... unfortunately, it did!", true, e); // program crashed
             }
         }
     }
