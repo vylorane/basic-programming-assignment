@@ -26,6 +26,7 @@ public class RunningSpeedCalculator {
    * Use the Double.parseDouble() function to covert a String to a double.
    * Do not round any numbers or limit any decimal places in your calculations.
    * Assume 1 mile = 1.609344 kilometers.
+   * Use the System.out.println() function for all text output, not System.out.print()
    * 
    * @param args An array of any command-line arguments.  Java requires the main function include this, even if not used.
    * @throws Exception Allows us to not worry about Exceptions in this function. Java requires the main functino include this, even if not used.
