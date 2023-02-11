@@ -6,10 +6,10 @@ import java.util.Scanner;
  * This question is based on Question 1-11 in Liang's Intro to Java textbook.
  * 
  * Complete this program such that it:
- *  - calculates and displays the projected population for each of the next five years.
+ *  - calculates and displays the projected population at the end of each of year from 2023 to 2027.
  *
  * The U.S. Census Bureau projects population based on the following assumptions:
- *  - Current population: 332,403,650
+ *  - Population at the start of 2023: 332,403,650
  *  - Each year has 365 days
  *  - One birth every 7 seconds
  *  - One death every 13 seconds
@@ -19,6 +19,7 @@ import java.util.Scanner;
  *  - There are no fractional people.  All population projections must be integers.
  *  - In Java, if two integers perform division, the result is an integer - the fractional part is truncated.  
  *  - To get an accurate result, one of the values in the division must be a number with a decimal place.
+ *  - use System.out.println() to output all text, not System.out.print()
  * 
  * Sample output. Your program should format the output exactly like this: 
  *  Here are the projected population numbers for the next five years:
