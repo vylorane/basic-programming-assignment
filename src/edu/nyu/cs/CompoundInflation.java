@@ -21,7 +21,7 @@ import java.util.Scanner;
  *  Please enter your monthly savings rate: 120
  *  If you save $120 per month with 10% annual inflation, after 6 months, your account will hold an amount equivalent to $114 today.
  */
- public class CompoundInflation {
+public class CompoundInflation {
     
     public static void main(String[] args) {
         
