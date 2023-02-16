@@ -33,6 +33,28 @@ public class RunningSpeedCalculator {
    */
   public static void main(String[] args) throws Exception {
         // complete this function to solve the problem
+        Scanner scnr = new Scanner(System.in);
+        System.out.println("How many kilometers did you run? : ");
+        String kilometers = scnr.nextLine();
+
+        double kiloRan = Double.parseDouble(kilometers); // convert string to double
+
+        System.out.println("");
+        System.out.println("How many minutes did it take you to run?");
+        String minutes = scnr.nextLine();
+        
+        scnr.close();
+
+        double minRan =  Double.parseDouble(minutes);
+
+
+        double kiloToMi = kiloRan * (1/1.609344);
+
+        double averagePerHour = kiloToMi/(minRan/60);
+      
+
+        System.out.println("Your average speed was " + Math.round(averagePerHour*10)/10 + " per hour.");
+
   }
 
 

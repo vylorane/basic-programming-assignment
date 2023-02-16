@@ -1,6 +1,8 @@
 package edu.nyu.cs;
 
-import java.util.Scanner;
+//import java.util.Scanner;
+
+import java.util.ArrayList;
 
 /**
  * This question is based on Question 1-11 in Liang's Intro to Java textbook.
@@ -40,6 +42,35 @@ public class PopulationProjector {
      */
     public static void main(String[] args) throws Exception {
         // complete this function to solve the problem
+
+        int year = 2023;
+
+        double initialPopulation = 332403650;
+        double birthsPerYear = 31536000 / 7;
+        double deathsPerYear = 31536000/ 13;
+        double newImmigrants = 31536000 / 45;
+
+       ArrayList<Double> populationList = new ArrayList<>(); // look up generics
+
+
+        for ( int i = 0; i < 5; i++){
+            initialPopulation+= Math.round(birthsPerYear);
+            initialPopulation-= Math.round(deathsPerYear);
+            initialPopulation+= Math.round(newImmigrants);
+            populationList.add(initialPopulation);
+
+
+        }
+
+        //int populationOne = populationList get(int 0);
+
+        System.out.println("Year " + year + ": " + Math.round(populationList.get(0)));
+        System.out.println("Year " + (year+1)+ ": " + Math.round(populationList.get(1)));
+        System.out.println("Year " + (year+2)+ ": " + Math.round(populationList.get(2)));
+        System.out.println("Year " + (year+3)+ ": " + Math.round(populationList.get(3)));
+        System.out.println("Year " + (year+4)+ ": " + Math.round(populationList.get(4)));
+
+
     }
 
 
